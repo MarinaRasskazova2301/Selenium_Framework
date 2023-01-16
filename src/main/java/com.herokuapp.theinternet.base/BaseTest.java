@@ -1,5 +1,6 @@
 package com.herokuapp.theinternet.base;
 
+import com.herokuapp.theinternet.pages.BasePageObject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +10,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
-public class BaseTest {
+public class BaseTest{
 
    protected WebDriver driver;
    protected Logger log;
@@ -23,7 +24,6 @@ public class BaseTest {
 
        BrowserDriverFactory factory=new BrowserDriverFactory(browser, log);
        driver=factory.createDriver();
-
         driver.manage().window().maximize();
     }
 

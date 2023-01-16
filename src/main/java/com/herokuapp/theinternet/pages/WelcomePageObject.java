@@ -16,13 +16,13 @@ public class WelcomePageObject extends BasePageObject {
 
     public void openPage() {
         log.info("Opening page: " + pageUrl);
-        driver.get(pageUrl);
+        openUrl(pageUrl);
         log.info("Page opened!");
     }
 
     public LoginPage clickAuthenticationLink() {
         log.info("Clicking Authentication link on Welcome Page");
-        driver.findElement(formAuthenticationLocator).click();
+        click(formAuthenticationLocator);
         return new LoginPage(driver, log);
     }
 
