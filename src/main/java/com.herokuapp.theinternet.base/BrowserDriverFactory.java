@@ -4,9 +4,6 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.Optional;
-
-import java.util.Locale;
 
 public class BrowserDriverFactory {
     private ThreadLocal<WebDriver> driver=new ThreadLocal<>();

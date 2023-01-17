@@ -1,6 +1,5 @@
 package com.herokuapp.theinternet.base;
 
-import com.herokuapp.theinternet.pages.BasePageObject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
