@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class BasePageObject {
 
@@ -30,15 +31,19 @@ public class BasePageObject {
         return driver.getCurrentUrl();
     }
 
-
     protected WebElement find(By locator) {
         return driver.findElement(locator);
     }
 
+    protected List<WebElement> findAll(By locator){
+        return driver.findElements(locator);
+    }
+
+
+
     protected void click(By locator) {
         waitForVisibilityOf(locator, 5);
         find(locator).click();
-
     }
 
     protected void type(String text, By locator) {
@@ -52,7 +57,6 @@ public class BasePageObject {
         wait.until(condition);
     }
 
-
     protected void waitForVisibilityOf(By locator, Integer... timeOutInSeconds) {
         int attempts = 0;
         while (attempts < 2) {
@@ -61,6 +65,7 @@ public class BasePageObject {
                         (timeOutInSeconds.length > 0 ? timeOutInSeconds[0] : null));
                 break;
             } catch (StaleElementReferenceException e) {
+                e.printStackTrace();
             }
             attempts++;
         }
