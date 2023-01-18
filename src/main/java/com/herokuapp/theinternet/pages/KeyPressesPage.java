@@ -4,6 +4,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 
 public class KeyPressesPage extends BasePageObject {
 
@@ -27,5 +28,11 @@ public class KeyPressesPage extends BasePageObject {
         return result;
     }
 
+    public void pressKeyWithActions(Keys key){
+        log.info("Pressing "+key.name()+" usingActions class");
+        Actions action=new Actions(driver);
+        action.sendKeys(key).build().perform();
+
+    }
 
 }

@@ -22,4 +22,16 @@ public class KeyPressesTests extends TestUtilities {
         Assert.assertEquals(result, "You entered: ENTER");
     }
 
+    @Test
+    public void pressKeyWithActionsTest(){
+        log.info("Starting pressKeyWithActionsTest");
+        WelcomePageObject welcomePage = new WelcomePageObject(driver, log);
+        welcomePage.openPage();
+        KeyPressesPage keyPressesPage = welcomePage.clickKeyPressesLink();
+        keyPressesPage.pressKeyWithActions(Keys.SPACE);
+        String result=keyPressesPage.getResultText();
+
+        Assert.assertEquals(result, "You entered: SPACE");
+    }
+
 }
