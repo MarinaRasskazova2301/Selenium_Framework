@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class WindowsTests extends TestUtilities {
 
 @Test
-    public void multipleWindows(){
+    public void multipleWindowsTests(){
 
     log.info("Starting jsDismissTest");
     WelcomePageObject welcomePageObject = new WelcomePageObject(driver, log);

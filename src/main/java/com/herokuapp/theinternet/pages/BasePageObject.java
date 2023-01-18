@@ -99,7 +99,12 @@ public class BasePageObject {
     }
 
     public String getCurrentPageSourse() {
+
         return driver.getPageSource();
+    }
+
+    protected void switchToFrame(By frameLocator) {
+       driver.switchTo().frame(find(frameLocator));
     }
 
 }
