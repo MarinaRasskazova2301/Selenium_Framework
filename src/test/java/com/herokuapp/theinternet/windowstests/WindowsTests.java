@@ -12,7 +12,7 @@ public class WindowsTests extends TestUtilities {
 @Test
     public void multipleWindowsTests(){
 
-    log.info("Starting jsDismissTest");
+    log.info("Starting multipleWindowsTests");
     WelcomePageObject welcomePageObject = new WelcomePageObject(driver, log);
     welcomePageObject.openPage();
     WindowsPage windowsPage = welcomePageObject.clickMultipleWindowsLink();

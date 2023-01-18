@@ -107,4 +107,8 @@ public class BasePageObject {
        driver.switchTo().frame(find(frameLocator));
     }
 
+    protected void pressKey (By locator, Keys key){
+        find(locator).sendKeys(key);
+    }
+
 }
