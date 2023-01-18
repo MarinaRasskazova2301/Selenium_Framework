@@ -5,8 +5,11 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 public class BasePageObject {
 
@@ -31,7 +34,7 @@ public class BasePageObject {
         return driver.findElement(locator);
     }
 
-    protected List<WebElement> findAll(By locator){
+    protected List<WebElement> findAll(By locator) {
         return driver.findElements(locator);
     }
 
@@ -65,12 +68,38 @@ public class BasePageObject {
         }
     }
 
-    public Alert switchToAlert(){
+    public Alert switchToAlert() {
         driver.switchTo().alert();
-        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(5) );
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.alertIsPresent());
         return driver.switchTo().alert();
     }
 
+    public void switchToNewWindowWithTitle(String expectedTitle) {
+
+        String firstWindow = driver.getWindowHandle();
+
+        Set<String> allWindows = driver.getWindowHandles();
+        Iterator<String> windowsIterator = allWindows.iterator();
+
+        while (windowsIterator.hasNext()) {
+            String windowHandle = windowsIterator.next();
+            if (!windowHandle.equals(firstWindow)) {
+                driver.switchTo().window(windowHandle);
+                if (getCurrentPageTitle().equals(expectedTitle)) {
+                    break;
+                }
+            }
+        }
+
+    }
+
+    public String getCurrentPageTitle() {
+        return driver.getTitle();
+    }
+
+    public String getCurrentPageSourse() {
+        return driver.getPageSource();
+    }
 
 }
