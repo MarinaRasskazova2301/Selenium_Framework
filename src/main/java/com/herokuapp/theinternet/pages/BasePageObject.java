@@ -2,6 +2,7 @@ package com.herokuapp.theinternet.pages;
 
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -142,6 +143,11 @@ public class BasePageObject {
                         + "simulateHTML5DragAndDrop(source,destination);",
                 find(from), find(to));
 
+    }
+
+    protected void hoverOverElement(WebElement element) {
+        Actions action=new Actions(driver);
+        action.moveToElement(element).build().perform();
     }
 
 }

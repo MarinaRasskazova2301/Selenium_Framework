@@ -17,6 +17,7 @@ public class WelcomePage extends BasePageObject {
     private By keyPressesLocator = By.linkText("Key Presses");
     private By fileUploadLocator = By.linkText("File Upload");
     private By dragAndDropLocator = By.linkText("Drag and Drop");
+    private By hooversLocator = By.linkText("Hovers");
 
     public WelcomePage(WebDriver driver, Logger log) {
         super(driver, log);
@@ -35,46 +36,52 @@ public class WelcomePage extends BasePageObject {
     }
 
     public CheckboxesPage clickCheckboxesLink() {
-        log.info("Clicking Checkboxes link on Welcome Page");
+        log.info("Clicking 'Checkboxes' link on Welcome Page");
         click(checkboxesLinkLocator);
         return new CheckboxesPage(driver, log);
     }
 
     public DropdownPage clickDropdownLink() {
-        log.info("Clicking Dropdown link on Welcome Page");
+        log.info("Clicking 'Dropdown' link on Welcome Page");
         click(dropdownLinkLocator);
         return new DropdownPage(driver, log);
     }
     public JavaScriptAlertsPage clickJavaScriptAlertLink() {
-        log.info("Clicking JavaScriptAlerts link on Welcome Page");
+        log.info("Clicking 'JavaScriptAlerts' link on Welcome Page");
         click(javaScriptAlertsLocator);
         return new JavaScriptAlertsPage(driver, log);
     }
 
     public WindowsPage clickMultipleWindowsLink() {
-        log.info("Clicking JavaScriptAlerts 'Multiple Windows' Link on Welcome Page");
+        log.info("Clicking 'Multiple Windows' Link on Welcome Page");
         click(multipleWindowsLocator);
         return new WindowsPage(driver, log);
     }
 
     public EditorPage clickWYSIWYGEditorLink() {
-        log.info("Clicking JavaScriptAlerts 'WYSIWYG Editor' Link on Welcome Page");
+        log.info("Clicking 'WYSIWYG Editor' Link on Welcome Page");
         click(WYSIWYGEditorLocator);
         return new EditorPage(driver, log);
     }
     public KeyPressesPage clickKeyPressesLink() {
-        log.info("Clicking JavaScriptAlerts 'Key Presses' Link on Welcome Page");
+        log.info("Clicking 'Key Presses' Link on Welcome Page");
         click(keyPressesLocator);
         return new KeyPressesPage(driver, log);
     }
     public FileUploadPage clickFileUploadLink() {
-        log.info("Clicking JavaScriptAlerts 'File Upload' Link on Welcome Page");
+        log.info("Clicking 'File Upload' Link on Welcome Page");
         click(fileUploadLocator);
         return new FileUploadPage(driver, log);
     }
     public DragAndDropPage clickDragAndDropLink() {
-        log.info("Clicking JavaScriptAlerts 'Drag and Drop' Link on Welcome Page");
+        log.info("Clicking 'Drag and Drop' Link on Welcome Page");
         click(dragAndDropLocator);
         return new DragAndDropPage(driver, log);
+    }
+
+    public HoversPage clickHooversLink() {
+        log.info("Clicking 'Hoovers' Link on Welcome Page");
+        click(hooversLocator);
+        return new HoversPage(driver, log);
     }
    }

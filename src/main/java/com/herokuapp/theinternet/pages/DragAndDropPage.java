@@ -18,8 +18,6 @@ public class DragAndDropPage extends BasePageObject {
         performDragAndDrop(columnALocator, columnBLocator);
     }
 
-
-
     public String getColumnAText() {
         String text=find(columnALocator).getText();
         log.info("Column A text: "+text);
