@@ -111,4 +111,9 @@ public class BasePageObject {
         find(locator).sendKeys(key);
     }
 
+    public void scrollToBottom() {
+        log.info("Scrolling to the bottom of the page");
+        JavascriptExecutor jsExecutor=(JavascriptExecutor) driver;
+        jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+    }
 }

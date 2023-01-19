@@ -2,7 +2,7 @@ package com.herokuapp.theinternet.alertstests;
 
 import com.herokuapp.theinternet.base.TestUtilities;
 import com.herokuapp.theinternet.pages.JavaScriptAlertsPage;
-import com.herokuapp.theinternet.pages.WelcomePageObject;
+import com.herokuapp.theinternet.pages.WelcomePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -11,7 +11,7 @@ public class AlertsTests extends TestUtilities {
     @Test
     public void jsAlertTest() {
 
-        WelcomePageObject welcomePageObject = new WelcomePageObject(driver, log);
+        WelcomePage welcomePageObject = new WelcomePage(driver, log);
         welcomePageObject.openPage();
         JavaScriptAlertsPage alertsPage = welcomePageObject.clickJavaScriptAlertLink();
         alertsPage.openJSAlert();
@@ -25,7 +25,7 @@ public class AlertsTests extends TestUtilities {
     @Test
     public void jsDismissTest() {
         log.info("Starting jsDismissTest");
-        WelcomePageObject welcomePageObject = new WelcomePageObject(driver, log);
+        WelcomePage welcomePageObject = new WelcomePage(driver, log);
         welcomePageObject.openPage();
         JavaScriptAlertsPage alertsPage = welcomePageObject.clickJavaScriptAlertLink();
         alertsPage.openJSConfirm();
@@ -39,7 +39,7 @@ public class AlertsTests extends TestUtilities {
     @Test
     public void jsPromptTest() {
         log.info("Starting jsPromptTest");
-        WelcomePageObject welcomePageObject = new WelcomePageObject(driver, log);
+        WelcomePage welcomePageObject = new WelcomePage(driver, log);
         welcomePageObject.openPage();
         JavaScriptAlertsPage alertsPage = welcomePageObject.clickJavaScriptAlertLink();
         alertsPage.openJSPrompt();

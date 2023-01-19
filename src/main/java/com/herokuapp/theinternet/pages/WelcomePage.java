@@ -4,7 +4,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class WelcomePageObject extends BasePageObject {
+public class WelcomePage extends BasePageObject {
 
     private String pageUrl = "http://the-internet.herokuapp.com/";
 
@@ -17,7 +17,7 @@ public class WelcomePageObject extends BasePageObject {
     private By keyPressesLocator = By.linkText("Key Presses");
     private By fileUploadLocator = By.linkText("File Upload");
 
-    public WelcomePageObject(WebDriver driver, Logger log) {
+    public WelcomePage(WebDriver driver, Logger log) {
         super(driver, log);
     }
 
@@ -71,4 +71,5 @@ public class WelcomePageObject extends BasePageObject {
         click(fileUploadLocator);
         return new FileUploadPage(driver, log);
     }
-}
+
+   }
