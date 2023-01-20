@@ -7,10 +7,10 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class HoversPage extends BasePageObject{
+public class HoversPage extends BasePageObject {
 
-    private By avatarLocator= By.xpath("//div[@class='figure']");
-    private By viewProfileLinkLocator= By.xpath(".//a[contains(text(), 'View profile')]");
+    private By avatarLocator = By.xpath("//div[@class='figure']");
+    private By viewProfileLinkLocator = By.xpath(".//a[contains(text(), 'View profile')]");
 
 
     public HoversPage(WebDriver driver, Logger log) {
@@ -18,9 +18,9 @@ public class HoversPage extends BasePageObject{
     }
 
     public void openUserProfile(int i) {
-      ;
-        List<WebElement> avatars=findAll(avatarLocator);
-        WebElement specifiedUserAvatar=avatars.get(i-1);
+
+        List<WebElement> avatars = findAll(avatarLocator);
+        WebElement specifiedUserAvatar = avatars.get(i - 1);
         hoverOverElement(specifiedUserAvatar);
         specifiedUserAvatar.findElement(viewProfileLinkLocator).click();
 
