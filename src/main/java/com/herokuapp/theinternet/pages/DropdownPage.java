@@ -9,15 +9,12 @@ public class DropdownPage extends BasePageObject{
 
     By dropdownLocator= By.id("dropdown");
 
-
-
-
     public DropdownPage(WebDriver driver, Logger log) {
         super(driver, log);
     }
 
     public void selectOption(int option){
-        log.info("Selecting option %d", option);
+        log.info("Selecting option is "+ option);
         Select dropdown=new Select(find(dropdownLocator));
         dropdown.selectByValue(""+option);
     }
@@ -25,7 +22,7 @@ public class DropdownPage extends BasePageObject{
     public String getSelectedOption(){
         Select dropdown=new Select(find(dropdownLocator));
         String selectedOption=dropdown.getFirstSelectedOption().getText();
-        log.info("selected option is %s", selectedOption);
+        log.info("selected option is "+ selectedOption);
         return selectedOption;
     }
 

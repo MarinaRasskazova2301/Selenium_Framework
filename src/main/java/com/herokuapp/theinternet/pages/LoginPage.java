@@ -17,7 +17,7 @@ public class LoginPage extends BasePageObject {
 
     public SecureAreaPage logIn(String username, String password) {
 
-        log.info("Executing LogIn with username [" + username + "] and password [" + password);
+        log.info("Executing LogIn with username [" + username + "] and password [" + password+"]");
         type(username, usernameLocator);
         type(password, passwordLocator);
         click(logInButtonLocator);
